@@ -40,26 +40,40 @@ senha="";
         this.MostrarMensagem("Usuário Logado");
         this.route.navigate(['home'], navigationExtras);
         
-      } else  {
+      } else if (this.usuario === "cachorroChupado" && this.senha === "doguinSinistro") {
+      
+        this.MostrarMensagem("Usuário Logado");
+        this.route.navigate(['home'], navigationExtras);
+      
+      } else if (this.usuario === "DuduDaZl123" && this.senha === "edu8327") {
+      
+        this.MostrarMensagem("Usuário Logado");
+        this.route.navigate(['home'], navigationExtras);
+      
+      } else {
         this.MostrarMensagem("Usuário ou senha inválidos");   
       }
     }
   }
-
+  /*
   LogOut(){
     this.usuario = "";
     this.senha = "";
     this.MostrarMensagem("Deslogado");
+  }*/
+
+  cadastro(){
+    this.route.navigate(['cadastro']);
   }
 
   Verificar(){
     if (this.usuario === "" && this.senha === "") {
       this.MostrarMensagem("Preencher o campos");      
       return false;
-    } else if (this.usuario.length < 10) {
-      this.MostrarMensagem("O campo usuário normalmente necessita de pelo menos 10 caracteres");
+    } else if (this.usuario.length < 1) {
+      this.MostrarMensagem("O campo usuário normalmente necessita de pelo menos 1 caracter");
       return false;
-    } else if (this.usuario.length >= 10 && this.senha === "") {
+    } else if (this.usuario.length >= 1 && this.senha === "") {
       this.MostrarMensagem("Você está tentando entrar sem a senha, por favor insira e tente novamente");
       return false;
     }

@@ -16,7 +16,7 @@ export class HomePage {
   constructor(private route:ActivatedRoute, private router:Router) {
 
     
-
+    //dados dos contatos
     this.contatos = [
       {nome:"Henrique",telefone:"(11) 98265-2190", imagem:"assets/img/henrique.jpg"},
       {nome:"Travis Scott",telefone:"(1) (917) 765-2266 ", imagem:"assets/img/travisscott.jpg"}

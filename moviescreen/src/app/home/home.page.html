@@ -1,22 +1,15 @@
 <ion-header>    
   <ion-toolbar>
     <ion-title>   
-      Contatos
+      MovieScreen
     </ion-title>   
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-<ion-list>
-  
-  <ion-item *ngFor="let contato of contatos" (click)="selecionarContato(contato)">
-    <ion-icon name="call-outline" slot="end"></ion-icon>
-    <ion-avatar>
-      <img src="{{contato.imagem}}">
-    </ion-avatar>
-    {{contato.nome}}
-  </ion-item>
-</ion-list>
+<ion-text>
+  <h5>Seja bem-vindo, {{username.toUpperCase()}}</h5>
+</ion-text>
 
 </ion-content>

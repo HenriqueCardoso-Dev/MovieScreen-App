@@ -35,11 +35,11 @@ ion-input{
     border-radius: 15px;
     margin-top: 10px;
     text-align: center;
-
+    outline: none;
 }
 
 #botoes{
-    margin: 12% 6%;
+    margin: 6% auto 12%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,10 +47,16 @@ ion-input{
 
 ion-button{
     height: 40px;
-    width: 100px;
+    width: 200px;
     font-weight: bold;
-    --border-radius: 5px 20px;
+    --border-radius:20px;
     --background: rgb(136, 20, 136);
     --background-hover:  rgb(94, 17, 117);
     --transition: 3.2s;
+}
+
+ion-text {
+    font-size: 10pt;
+    text-align: center;
+    cursor: pointer;
 }
