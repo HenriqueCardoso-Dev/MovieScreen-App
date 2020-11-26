@@ -15,14 +15,6 @@ const routes: Routes = [
     path: 'acesso',
     loadChildren: () => import('./acesso/acesso.module').then( m => m.AcessoPageModule)
   },
-  {
-    path: 'henrique',
-    loadChildren: () => import('./henrique/henrique.module').then( m => m.HenriquePageModule)
-  },
-  {
-    path: 'travis',
-    loadChildren: () => import('./travis/travis.module').then( m => m.TravisPageModule)
-  },
 ];
 
 @NgModule({
