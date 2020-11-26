@@ -1,0 +1,7 @@
+{
+  "name": "moviescreen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
