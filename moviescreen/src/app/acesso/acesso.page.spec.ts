@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SobrePage } from './sobre.page';
+import { AcessoPage } from './acesso.page';
 
-describe('SobrePage', () => {
-  let component: SobrePage;
-  let fixture: ComponentFixture<SobrePage>;
+describe('AcessoPage', () => {
+  let component: AcessoPage;
+  let fixture: ComponentFixture<AcessoPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SobrePage ],
+      declarations: [ AcessoPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SobrePage);
+    fixture = TestBed.createComponent(AcessoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

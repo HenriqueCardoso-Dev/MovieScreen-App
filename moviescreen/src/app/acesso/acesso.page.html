@@ -1,0 +1,33 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Entrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscren>
+
+  <section>
+
+    <h4>PRIVATE CONTACTS</h4>
+  
+    <ion-item>
+      <ion-label position="floating">Usuário:</ion-label>
+      <ion-input [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Senha:</ion-label>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+
+    <div id="botoes">
+      <ion-button (click)="LogIn()">Log-in</ion-button>
+      <ion-button (click)="LogOut()">log-out</ion-button>
+    </div>
+
+  </section> 
+
+</ion-content>
+
+
+

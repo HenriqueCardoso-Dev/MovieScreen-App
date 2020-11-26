@@ -11,7 +11,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
   navegacao : any;
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -28,12 +27,14 @@ export class AppComponent {
     });
   }
 
-  sideMenu() {
-    this.navegacao = [
-      {title:"Home",url:"/home",icon:"home"},
-      {title:"Chat",url:"/chat",icon:"chatbubbles-outline"},
-      {title:"Contatos",url:"/contatos",icon:"call-outline"},
-      {title:"Sobre",url:"/sobre",icon:"information-circle-outline"}
-    ];
+  sideMenu()
+  {
+    this.navegacao =
+    [
+      {title : "Home",url : "/home",icon : "home"},
+      {title : "Chat",url : "/chat",icon : "chatbubbles-outline"},
+      {title : "Contatos",url : "/contatos", icon : "call-outline"},
+      {title : "Sobre",url : "/sobre", icon : "information-circle-outline"}
+    ]
   }
 }

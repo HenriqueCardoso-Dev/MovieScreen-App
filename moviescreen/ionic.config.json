@@ -1,7 +1,5 @@
 {
-  "name": "moviescreen",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "padrao",
+  "integrations": {},
   "type": "angular"
 }

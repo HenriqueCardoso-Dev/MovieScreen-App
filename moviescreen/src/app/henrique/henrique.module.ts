@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SobrePageRoutingModule } from './sobre-routing.module';
+import { HenriquePageRoutingModule } from './henrique-routing.module';
 
-import { SobrePage } from './sobre.page';
+import { HenriquePage } from './henrique.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SobrePageRoutingModule
+    HenriquePageRoutingModule
   ],
-  declarations: [SobrePage]
+  declarations: [HenriquePage]
 })
-export class SobrePageModule {}
+export class HenriquePageModule {}

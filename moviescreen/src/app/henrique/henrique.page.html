@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <a href="editarContato" slot="end" color="primary">
+      Editar
+    </a>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <header>
+    <ion-avatar>
+      <img src="{{contactImage}}">
+    </ion-avatar>
+    <h4>{{contactName}}</h4>
+  </header>
+
+  <section id="mainActions">
+
+    <div class="optionAction">
+      <img src="../../assets/ion-icons/chatbubble-outline.svg">
+      mensagem
+    </div>
+  
+    <div class="optionAction">
+      <img src="../../assets/ion-icons/call-outline.svg">
+      ligar
+    </div>
+  
+    <div class="optionAction">
+      <img src="../../assets/ion-icons/videocam-outline.svg">
+      video
+    </div>
+  
+    <div class="optionAction">
+      <img src="../../assets/ion-icons/mail-outline.svg">
+      email
+    </div>
+
+  </section>
+
+  <div class="contactInfo">
+
+    <p>Celular</p>
+    {{contactNumber}}
+
+  </div>
+
+  <div class="contactInfo">
+    <p>Notas</p>
+    <ion-textarea rows="1"></ion-textarea>
+
+  </div>
+
+  <div class="contactInfo">
+    Enviar mensagem
+    <hr>
+    Compartilhar Contato
+    <hr>
+    Adicionar aos Favoritos
+  </div>
+
+  <div class="contactInfo">
+    Adicionar a Contatos de Emergência
+  </div>
+
+  <div class="contactInfo">
+    Compartilhar Localização
+  </div>
+
+  <div class="contactInfo">
+    <spam>Bloquear este chamador</spam>
+  </div>
+
+</ion-content>
