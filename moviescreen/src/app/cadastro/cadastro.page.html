@@ -4,6 +4,68 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+
+  <section>
+
+    <ion-img src="../../assets/img/headerLogo.png"></ion-img>
+  
+    <ion-text color="danger">
+      Dados Pessoais:
+    </ion-text>
+    
+    <ion-item>
+      <ion-label position="stacked">Nome Completo:</ion-label>
+      <ion-input [(ngModel)]="nomeCompV"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Data de nascimento:</ion-label>
+      <ion-input [(ngModel)]="dateNascV" type="date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">CPF:</ion-label>
+      <ion-input [(ngModel)]="cpfV"></ion-input>
+    </ion-item>
+
+    <ion-img src="../../assets/img/bandeiras-3-removebg-preview.png"></ion-img>
+
+    <ion-item>
+      <ion-label position="stacked">Nº do Cartão:</ion-label>
+      <ion-input [(ngModel)]="creditCardNumberV"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Data de Validade (MM/AA):</ion-label>
+      <ion-input [(ngModel)]="cardDateV"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Código de Segurança(CVV):</ion-label>
+      <ion-input [(ngModel)]="codCardV" type="number"></ion-input>
+    </ion-item>
+    
+    
+    <ion-text color="danger">
+      Dados de Usuário:
+    </ion-text>
+    
+    <ion-item>
+      <ion-label position="stacked">Nome de usuário:</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Usuário:</ion-label>
+      <ion-input [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Usuário:</ion-label>
+      <ion-input [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+
+  </section>
 
 </ion-content>
