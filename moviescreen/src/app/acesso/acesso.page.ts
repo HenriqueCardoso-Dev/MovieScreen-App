@@ -30,7 +30,17 @@ export class AcessoPage implements OnInit {
 
     //atribuindo a imagem de perfil de acordo com o nome do usuário;
     if (this.usuario === "henrique123") {
+    
       this.fotoPerfil = "../../assets/img/perfilPhotos/henrique.jpg";
+    
+    } else if (this.usuario === "cachorroChupado") {
+    
+      this.fotoPerfil = "../../assets/img/perfilPhotos/doguin.jpg";
+    
+    } else if (this.usuario === "DuduDaZl123") {
+    
+      this.fotoPerfil = "../../assets/img/perfilPhotos/eduardo.jpg";
+    
     }
 
     let userAcess = {
