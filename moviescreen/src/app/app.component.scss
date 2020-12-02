@@ -17,10 +17,11 @@ ion-menu ion-content {
 
 ion-menu ion-content ion-menu-toggle ion-item{
     --background: #131313;
-    --color: rgb(196, 194, 197);
+    --color: #c4c2c5;
 
 }
 
 ion-menu ion-content ion-list{
     --background: #131313;
+    padding: 0;
 }
