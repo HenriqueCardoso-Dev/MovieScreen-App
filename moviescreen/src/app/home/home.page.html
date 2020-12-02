@@ -22,22 +22,26 @@
       <h1>{{username.toUpperCase()}} </h1>
     </div>
 
-    <ion-card *ngFor="let filme of mediaVideos" (click)="selecionarFilme()">
-      <img src="{{filme.capa}}" />
-      <ion-card-header>
-        <ion-card-subtitle>{{filme.ano}}, {{filme.genero}}  -  {{filme.duracao}}</ion-card-subtitle>
-        <ion-card-title>{{filme.nome}}</ion-card-title>
-      </ion-card-header>
     
-      <ion-card-content>
-        desc
-      </ion-card-content>
-    </ion-card>  
+    <ion-text class="status">
+      Status: Administrador
+    </ion-text>
+
+    <section class="inacabados">
+
+      <ion-text class="categoria" side="left">
+        <h4>Continuar Assistindo:</h4>
+      </ion-text>
+
+    </section>
+
 
     <ion-button (click)="LogOut()">
       Sair
       <img src="../../assets/ion-icons/log-out-outline.svg" alt="log-out">
     </ion-button>
+
+    
   
   </section>
 
