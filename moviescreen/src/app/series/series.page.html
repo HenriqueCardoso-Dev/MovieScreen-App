@@ -8,17 +8,17 @@
 </ion-header>
 
 <ion-content>
+  <section>
+    <ion-card *ngFor="let serie of seriados">
+      <img src="{{serie.capa}}" />
+      <ion-card-header>
+          <ion-card-subtitle>{{serie.ano}}, {{serie.genero}} - {{serie.temporadas}}</ion-card-subtitle>
+          <ion-card-title>{{serie.nome}}</ion-card-title>
+      </ion-card-header>
 
-  <ion-card *ngFor="let serie of seriados">
-    <img src="{{serie.capa}}" />
-    <ion-card-header>
-        <ion-card-subtitle>{{serie.ano}}, {{serie.genero}} - {{serie.temporadas}}</ion-card-subtitle>
-        <ion-card-title>{{serie.nome}}</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-        {{serie.sinopse}}
-    </ion-card-content>
-</ion-card>
-
+      <ion-card-content>
+          {{serie.sinopse}}
+      </ion-card-content>
+    </ion-card>
+  </section>
 </ion-content>

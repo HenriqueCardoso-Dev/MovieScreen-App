@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Filme } from 'src/modelos/filme';
 import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { ToastController} from '@ionic/angular';
 
@@ -14,13 +13,15 @@ export class HomePage {
   username : "";
   fotoPerfil:"";
 
-  mediaVideos : Filme[];
+  mediaVideos : any;
   constructor(private route:ActivatedRoute, private router:Router, public mensagem:ToastController) {
 
     
     //dados dos filmes
     this.mediaVideos = [
-      {nome:"Coringa", genero:"Ação, Ficção Científica, Terror", ano:"2020", capa:"../../assets/img/capas/movies/coringa.jpeg", duracao:"94min"}
+      {nome:"Coringa", genero:"Ação, Ficção Científica, Terror", ano:"2020", capa:"../../assets/img/capas/movies/coringa.jpeg", pAssistido:"18"},
+      {nome:"Peaky Blinders", genero:"Drama, Histórico, Policial", ano:"2013", capa:"../../assets/img/capas/series/peaky_blinders.jpeg", pAssistido:"45"},
+      {nome:"One Piece", genero:"Ficção de aventura, Fantasia", ano:"1997", capa:"../../assets/img/capas/animes/onepiece.jpeg",  pAssistido:"2"}
     ];
 
 

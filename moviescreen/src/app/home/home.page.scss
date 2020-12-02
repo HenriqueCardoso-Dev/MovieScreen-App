@@ -1,7 +1,7 @@
 *{
   box-sizing: border-box;
   font-family: sans-serif;
-  color: #ffff;
+  color: rgb(255, 255, 255);
 }
 
 ion-header{
@@ -13,16 +13,11 @@ ion-header ion-buttons {
 }
 
 section {
-  height: 100%;
   display: flex;
   padding: 10px 8px;
   flex-direction: column;
   align-items: center;
   background-color: #131313;
-}
-
-section.inacabados {
-  height: 100%;
 }
 
 ion-avatar{
@@ -34,7 +29,7 @@ ion-avatar{
 ion-button {
   --background: rgb(136, 20, 136);
   width: 100px;
-  margin-bottom: 5%;
+  margin-bottom: 50px;
 }
 
 ion-button img{
@@ -57,4 +52,16 @@ ion-text.categoria{
 ion-text.categoria h4{
   color: rgb(241, 104, 104);
   
+}
+
+ion-text.status {
+  font-size: 9pt;
+}
+
+ion-card {
+  --background: #252525ea;
+}
+
+ion-card-subtitle {
+  font-size: 7pt;
 }

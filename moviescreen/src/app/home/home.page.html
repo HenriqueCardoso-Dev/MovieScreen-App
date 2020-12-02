@@ -33,6 +33,14 @@
         <h4>Continuar Assistindo:</h4>
       </ion-text>
 
+      <ion-card *ngFor="let media of mediaVideos">
+        <img src="{{media.capa}}" />
+        <ion-card-header>
+            <ion-card-title>{{media.nome}}</ion-card-title>
+            <ion-card-subtitle>{{media.ano}}, {{media.genero}} <hr/> {{media.pAssistido}}% Assistido</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
     </section>
 
 

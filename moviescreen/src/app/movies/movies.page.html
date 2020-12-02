@@ -8,21 +8,17 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-text class="categoria" color="danger">
-    <h3>Filmes</h3>
-  </ion-text>
-  
-  <ion-card *ngFor="let filme of filmes">
-    <img src="{{filme.capa}}" />
-    <ion-card-header>
-      <ion-card-subtitle>{{filme.ano}}, {{filme.genero}}  -  {{filme.duracao}}</ion-card-subtitle>
-      <ion-card-title>{{filme.nome}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      {{filme.sinopse}}
-    </ion-card-content>
-  </ion-card>
-
+  <section>
+    <ion-card *ngFor="let filme of filmes">
+      <img src="{{filme.capa}}" />
+      <ion-card-header>
+        <ion-card-subtitle>{{filme.ano}}, {{filme.genero}}  -  {{filme.duracao}}</ion-card-subtitle>
+        <ion-card-title>{{filme.nome}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{filme.sinopse}}
+      </ion-card-content>
+    </ion-card>
+  </section>
 </ion-content>
