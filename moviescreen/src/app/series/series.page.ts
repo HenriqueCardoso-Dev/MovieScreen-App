@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Serie } from "src/modelos/serie";
 
 @Component({
   selector: 'app-series',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesPage implements OnInit {
 
-  constructor() { }
+  seriados: Serie[];
+
+  constructor() {
+
+    //adicionando Seriados:
+    this.seriados = [
+      {nome:"", genero:"", ano:"", capa:"", temporadas:"", sinopse:""}
+    ]
+
+   }
 
   ngOnInit() {
   }
