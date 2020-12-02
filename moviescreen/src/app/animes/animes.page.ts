@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Serie } from "src/modelos/serie";
 
 @Component({
   selector: 'app-animes',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimesPage implements OnInit {
 
-  constructor() { }
+  animes : Serie[];
+
+  constructor() { 
+
+    this.animes = [
+      {nome:"", genero:"", ano:"", capa:"", temporadas:"", sinopse:""}
+    ]
+
+  }
 
   ngOnInit() {
   }
