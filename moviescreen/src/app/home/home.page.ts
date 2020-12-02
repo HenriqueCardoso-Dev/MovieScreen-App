@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Contato } from 'src/modelos/contato';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { Filme } from 'src/modelos/filme';
+import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
+import { ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,16 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 export class HomePage {
 
   senha : "";
-  username : "";  
+  username : "";
+  fotoPerfil:"";
 
-  contatos : Contato[];
-  constructor(private route:ActivatedRoute, private router:Router) {
+  mediaVideos : Filme[];
+  constructor(private route:ActivatedRoute, private router:Router, public mensagem:ToastController) {
 
     
-    //dados dos contatos
-    this.contatos = [
-      {nome:"Henrique",telefone:"(11) 98265-2190", imagem:"assets/img/henrique.jpg"},
-      {nome:"Travis Scott",telefone:"(1) (917) 765-2266 ", imagem:"assets/img/travisscott.jpg"}
+    //dados dos filmes
+    this.mediaVideos = [
+      {nome:"Coringa", genero:"Ação, Ficção Científica, Terror", ano:"2020", capa:"../../assets/img/capas/movies/coringa.jpeg", duracao:"94min"}
     ];
 
 
@@ -29,12 +30,33 @@ export class HomePage {
         let loginData = JSON.parse(params.special);
         this.senha = loginData.password;
         this.username = loginData.username;
+        this.fotoPerfil = loginData.fotoPerfil;
       }
     });
 
 
   }
 
+
+  async MostrarMensagem(msg) {
+    const toast = await this.mensagem.create({
+      message: msg,
+      duration: 5000
+    });
+    toast.present();
+  }
+
+
+
+  
+
+  LogOut(){
+
+    this.MostrarMensagem("Deslogado");
+    this.router.navigate(['acesso'])
+  }
+
+  /*
   selecionarContato(contato : Contato)  {
     
     //criação de objeto
@@ -61,5 +83,5 @@ export class HomePage {
 
     }
     
-  }
+  }*/
 }

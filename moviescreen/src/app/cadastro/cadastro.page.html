@@ -57,14 +57,18 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Usuário:</ion-label>
-      <ion-input [(ngModel)]="usuario"></ion-input>
+      <ion-label position="stacked">Senha:</ion-label>
+      <ion-input [(ngModel)]="passV" type="password"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Usuário:</ion-label>
-      <ion-input [(ngModel)]="usuario"></ion-input>
+      <ion-label position="stacked">Confirmar senha:</ion-label>
+      <ion-input [(ngModel)]="passVConf" type="password"></ion-input>
     </ion-item>
+
+    <div id="botoes">
+      <ion-button (click)="userRegister()">Cadastrar e ir para Login</ion-button>
+    </div>
 
   </section>
 

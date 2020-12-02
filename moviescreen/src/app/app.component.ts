@@ -31,10 +31,10 @@ export class AppComponent {
   {
     this.navegacao =
     [
-      {title : "Home",url : "/home",icon : "home"},
-      {title : "Chat",url : "/chat",icon : "chatbubbles-outline"},
-      {title : "Contatos",url : "/contatos", icon : "call-outline"},
-      {title : "Sobre",url : "/sobre", icon : "information-circle-outline"}
+      {title:"Perfil", url:"/home", icon:"../assets/ion-icons/happy-outline.svg"},
+      {title:"Filmes", url:"/movies", icon:"../assets/ion-icons/film-outline.svg"},
+      {title:"Séries", url:"/series", icon:"../assets/ion-icons/planet-outline.svg"},
+      {title:"Animes", url:"/animes", icon:"../assets/ion-icons/nutrition-outline.svg"}
     ]
   }
 }

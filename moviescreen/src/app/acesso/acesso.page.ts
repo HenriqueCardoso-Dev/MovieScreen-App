@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, MenuController} from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-acesso',
@@ -8,9 +9,12 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./acesso.page.scss'],
 })
 export class AcessoPage implements OnInit {
-usuario="";
-senha="";
-  constructor(public toastController:ToastController, private route:Router) { }
+  
+  usuario="";
+  senha="";
+  fotoPerfil="";
+  
+  constructor(public toastController:ToastController, private route:Router, public menu:MenuController) {}
   
   ngOnInit() {}
 
@@ -24,9 +28,15 @@ senha="";
 
   LogIn() {
 
+    //atribuindo a imagem de perfil de acordo com o nome do usuário;
+    if (this.usuario === "henrique123") {
+      this.fotoPerfil = "../../assets/img/perfilPhotos/henrique.jpg";
+    }
+
     let userAcess = {
       username : this.usuario,
-      password : this.senha
+      password : this.senha,
+      fotoPerfil : this.fotoPerfil
     }
     let navigationExtras : NavigationExtras = {
       queryParams: {
@@ -39,6 +49,7 @@ senha="";
 
         this.MostrarMensagem("Usuário Logado");
         this.route.navigate(['home'], navigationExtras);
+
         
       } else if (this.usuario === "cachorroChupado" && this.senha === "doguinSinistro") {
       
@@ -78,6 +89,14 @@ senha="";
       return false;
     }
     return true;
+  }
+
+  ionViewDidEnter(){
+    this.menu.enable(false);
+  }
+
+  ionViewWillLeave(){
+    this.menu.enable(true);
   }
 
 }

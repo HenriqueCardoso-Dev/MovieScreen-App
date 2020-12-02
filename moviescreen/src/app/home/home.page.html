@@ -2,14 +2,43 @@
   <ion-toolbar>
     <ion-title>   
       MovieScreen
-    </ion-title>   
+    </ion-title> 
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>  
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
-<ion-text>
-  <h5>Seja bem-vindo, {{username.toUpperCase()}}</h5>
-</ion-text>
+<ion-content fullscreen>
+
+  <section>
+
+    <ion-avatar>
+      <img src="{{fotoPerfil}}" alt="foto de perfil">
+    </ion-avatar>
+
+    <div id="descUser">
+      <h1>{{username.toUpperCase()}} </h1>
+    </div>
+
+    <ion-card *ngFor="let filme of mediaVideos" (click)="selecionarFilme()">
+      <img src="{{filme.capa}}" />
+      <ion-card-header>
+        <ion-card-subtitle>{{filme.ano}}, {{filme.genero}}  -  {{filme.duracao}}</ion-card-subtitle>
+        <ion-card-title>{{filme.nome}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        desc
+      </ion-card-content>
+    </ion-card>  
+
+    <ion-button (click)="LogOut()">
+      Sair
+      <img src="../../assets/ion-icons/log-out-outline.svg" alt="log-out">
+    </ion-button>
+  
+  </section>
 
 </ion-content>
