@@ -13,7 +13,7 @@
     <h3>Filmes</h3>
   </ion-text>
   
-  <ion-card *ngFor="let filme of mediaVideos" (click)="selecionarFilme()">
+  <ion-card *ngFor="let filme of filmes">
     <img src="{{filme.capa}}" />
     <ion-card-header>
       <ion-card-subtitle>{{filme.ano}}, {{filme.genero}}  -  {{filme.duracao}}</ion-card-subtitle>
@@ -21,7 +21,7 @@
     </ion-card-header>
   
     <ion-card-content>
-      desc
+      {{filme.sinopse}}
     </ion-card-content>
   </ion-card>
 
