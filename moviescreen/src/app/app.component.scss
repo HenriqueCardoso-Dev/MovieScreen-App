@@ -1,0 +1,26 @@
+ion-toolbar {
+    text-align: center;
+}
+
+ion-toolbar img{
+   width: 180px;
+}
+
+ion-menu *{
+    --background: #131313;
+
+}
+
+ion-menu ion-content {
+    --background: #131313;
+}
+
+ion-menu ion-content ion-menu-toggle ion-item{
+    --background: #131313;
+    --color: rgb(196, 194, 197);
+
+}
+
+ion-menu ion-content ion-list{
+    --background: #131313;
+}
