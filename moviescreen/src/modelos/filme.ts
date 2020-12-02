@@ -4,4 +4,5 @@ export interface Filme {
    ano:string;
    capa:string;
    duracao:string;
+   sinopse:string;
 }
