@@ -1,12 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Animes</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="first"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Animes</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="first"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+
+    <ion-card *ngFor="let anime of animes">
+        <img src="{{anime.capa}}" />
+        <ion-card-header>
+            <ion-card-subtitle>{{anime.ano}}, {{anime.genero}} - {{anime.temporadas}}</ion-card-subtitle>
+            <ion-card-title>{{anime.nome}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            {{anime.sinopse}}
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>
