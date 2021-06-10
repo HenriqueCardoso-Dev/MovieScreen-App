@@ -9,12 +9,18 @@ import { ToastController} from '@ionic/angular';
 })
 export class HomePage {
 
-  senha : "";
-  username : "";
-  fotoPerfil:"";
+  user = {
+    user_nick: "",
+    user_email: "",
+    user_foto: ""
+  }
 
   mediaVideos : any;
-  constructor(private route:ActivatedRoute, private router:Router, public mensagem:ToastController) {
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router,
+    public mensagem:ToastController
+  ) {
 
     
     //dados dos filmes
@@ -29,9 +35,9 @@ export class HomePage {
       if (params && params.special){
         //conversão de JSON para string
         let loginData = JSON.parse(params.special);
-        this.senha = loginData.password;
-        this.username = loginData.username;
-        this.fotoPerfil = loginData.fotoPerfil;
+        this.user.user_nick = loginData.user_nick;
+        this.user.user_email = loginData.user_email;        
+        this.user.user_foto = loginData.user_foto;
       }
     });
 

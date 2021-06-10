@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, ToastController} from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
+import { UserService } from '../services/api/user.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,7 +13,12 @@ import { NavigationExtras, Router } from '@angular/router';
 
 export class CadastroPage implements OnInit {
 
-  constructor(public menu:MenuController, public msgReturn:ToastController, private navegacao:Router) { }
+  constructor(
+    public menu:MenuController,
+    public msgReturn:ToastController,
+    private navegacao:Router,
+    private userService:UserService
+  ) { }
 
   ngOnInit() {
   }
@@ -24,9 +31,35 @@ export class CadastroPage implements OnInit {
     toast.present();
   }
 
-  userRegister(){
-    this.navegacao.navigate(['acesso']);
-    this.retornarMensagem("Entre com a conta nova!");
+  userRegister(form:NgForm){
+    const user = form.value;
+
+    this.userService.newUser(user).subscribe(response => {
+      if (response['status'] == 'false') {
+        this.retornarMensagem(response['reason']);
+      }else {
+        this.userService.getUser(response['id_user']).subscribe(response => {
+          let userAcess = {
+            user_nick: response['nick_user'],
+            user_email: response['email_user'],
+            user_foto: response['ft_user']
+          }
+  
+          let navigationExtras: NavigationExtras = {
+            queryParams: {
+              special: JSON.stringify(userAcess)
+            }
+          }
+
+          let message = "usuário cadastrado com sucesso!";
+
+          this.retornarMensagem(message);
+
+          this.navegacao.navigate(['home'], navigationExtras);
+        })
+        
+      }
+    })
   }
   
 

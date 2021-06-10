@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController, MenuController} from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { HomePage } from '../home/home.page';
+import { UserService } from '../services/api/user.service';
 
 @Component({
   selector: 'app-acesso',
@@ -10,11 +11,15 @@ import { HomePage } from '../home/home.page';
 })
 export class AcessoPage implements OnInit {
   
-  usuario="";
-  senha="";
-  fotoPerfil="";
+  email_user="";
+  pass_user="";
   
-  constructor(public toastController:ToastController, private route:Router, public menu:MenuController) {}
+  constructor(
+    public toastController:ToastController,
+    private route:Router,
+    public menu:MenuController,
+    private userService:UserService
+  ) {}
   
   ngOnInit() {}
 
@@ -28,52 +33,25 @@ export class AcessoPage implements OnInit {
 
   LogIn() {
 
-    //atribuindo a imagem de perfil de acordo com o nome do usuário;
-    if (this.usuario === "henrique123") {
-    
-      this.fotoPerfil = "../../assets/img/perfilPhotos/henrique.jpg";
-    
-    } else if (this.usuario === "cachorroChupado") {
-    
-      this.fotoPerfil = "../../assets/img/perfilPhotos/doguin.jpg";
-    
-    } else if (this.usuario === "DuduDaZl123") {
-    
-      this.fotoPerfil = "../../assets/img/perfilPhotos/eduardo.jpg";
-    
-    }
-
-    let userAcess = {
-      username : this.usuario,
-      password : this.senha,
-      fotoPerfil : this.fotoPerfil
-    }
-    let navigationExtras : NavigationExtras = {
-      queryParams: {
-        special: JSON.stringify(userAcess)
-      }
-    }
-
     if (this.Verificar()) { 
-      if (this.usuario === "henrique123" && this.senha === "12345") {
-
-        this.MostrarMensagem("Usuário Logado");
-        this.route.navigate(['home'], navigationExtras);
-
-        
-      } else if (this.usuario === "cachorroChupado" && this.senha === "doguinSinistro") {
-      
-        this.MostrarMensagem("Usuário Logado");
-        this.route.navigate(['home'], navigationExtras);
-      
-      } else if (this.usuario === "DuduDaZl123" && this.senha === "edu8327") {
-      
-        this.MostrarMensagem("Usuário Logado");
-        this.route.navigate(['home'], navigationExtras);
-      
-      } else {
-        this.MostrarMensagem("Usuário ou senha inválidos");   
+      let userAcess = {
+        email_user : this.email_user,
+        pass_user : this.pass_user,
       }
+
+      let navigationExtras : NavigationExtras = {
+        queryParams: {
+          special: JSON.stringify(userAcess)
+        }
+      }
+
+      this.userService.login(userAcess).subscribe(response => {
+        if(response['status']=='false'){
+          this.MostrarMensagem(response['reason']);
+        }else{
+          this.route.navigate(['home'], navigationExtras);
+        }
+      })
     }
   }
   /*
@@ -88,13 +66,10 @@ export class AcessoPage implements OnInit {
   }
 
   Verificar(){
-    if (this.usuario === "" && this.senha === "") {
-      this.MostrarMensagem("Preencher o campos");      
+    if (this.email_user === "" && this.pass_user === "") {
+      this.MostrarMensagem("Preencher o campo");      
       return false;
-    } else if (this.usuario.length < 1) {
-      this.MostrarMensagem("O campo usuário normalmente necessita de pelo menos 1 caracter");
-      return false;
-    } else if (this.usuario.length >= 1 && this.senha === "") {
+    } else if (this.email_user.length >= 1 && this.pass_user === "") {
       this.MostrarMensagem("Você está tentando entrar sem a senha, por favor insira e tente novamente");
       return false;
     }

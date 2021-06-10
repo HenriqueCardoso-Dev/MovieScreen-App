@@ -6,7 +6,7 @@
 
 <ion-content fullscreen>
 
-  <section>
+  <form #f="ngForm" (ngSubmit)="userRegister(f)">
 
     <ion-img src="../../assets/img/headerLogo.png"></ion-img>
   
@@ -16,34 +16,34 @@
     
     <ion-item>
       <ion-label position="stacked">Nome Completo:</ion-label>
-      <ion-input [(ngModel)]="nomeCompV"></ion-input>
+      <ion-input [(ngModel)]="nm_user" name="nm_user"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Data de nascimento:</ion-label>
-      <ion-input [(ngModel)]="dateNascV" type="date"></ion-input>
+      <ion-input [(ngModel)]="dt_user_birth" name="dt_user_birth" type="date"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">CPF:</ion-label>
-      <ion-input [(ngModel)]="cpfV"></ion-input>
+      <ion-input [(ngModel)]="cpf_user" name="cpf_user"></ion-input>
     </ion-item>
 
     <ion-img src="../../assets/img/bandeiras-3-removebg-preview.png"></ion-img>
 
     <ion-item>
       <ion-label position="stacked">Nº do Cartão:</ion-label>
-      <ion-input [(ngModel)]="creditCardNumberV"></ion-input>
+      <ion-input [(ngModel)]="cc_user_number" name="cc_user_number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Data de Validade (MM/AA):</ion-label>
-      <ion-input [(ngModel)]="cardDateV"></ion-input>
+      <ion-input [(ngModel)]="cc_valid_date" name="cc_valid_date"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Código de Segurança(CVV):</ion-label>
-      <ion-input [(ngModel)]="codCardV" type="number"></ion-input>
+      <ion-input [(ngModel)]="cc_cvv" name="cc_cvv" type="number"></ion-input>
     </ion-item>
     
     
@@ -53,23 +53,23 @@
     
     <ion-item>
       <ion-label position="stacked">Nome de usuário:</ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-input [(ngModel)]="nick_user" name="nick_user"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input [(ngModel)]="email_user" name="email_user"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Senha:</ion-label>
-      <ion-input [(ngModel)]="passV" type="password"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Confirmar senha:</ion-label>
-      <ion-input [(ngModel)]="passVConf" type="password"></ion-input>
+      <ion-input [(ngModel)]="pass_user" name="pass_user" type="password"></ion-input>
     </ion-item>
 
     <div id="botoes">
-      <ion-button (click)="userRegister()">Cadastrar</ion-button>
+      <ion-button type="submit">Cadastrar</ion-button>
     </div>
 
-  </section>
+  </form>
 
 </ion-content>
