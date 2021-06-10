@@ -7,20 +7,17 @@ import { ToastController} from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
-  user = {
-    user_nick: "",
-    user_email: "",
-    user_foto: ""
-  }
+  user: any;
 
   mediaVideos : any;
   constructor(
     private route:ActivatedRoute,
     private router:Router,
     public mensagem:ToastController
-  ) {
+  ){
 
     
     //dados dos filmes
@@ -35,13 +32,14 @@ export class HomePage {
       if (params && params.special){
         //conversão de JSON para string
         let loginData = JSON.parse(params.special);
-        this.user.user_nick = loginData.user_nick;
-        this.user.user_email = loginData.user_email;        
-        this.user.user_foto = loginData.user_foto;
+        this.user = {
+          user_nick: ''+loginData.user_nick+'',
+          user_foto: ''+loginData.user_foto+''
+        };
       }
     });
 
-
+    console.log(this.user);
   }
 
 
@@ -53,12 +51,7 @@ export class HomePage {
     toast.present();
   }
 
-
-
-  
-
   LogOut(){
-
     this.MostrarMensagem("Deslogado");
     this.router.navigate(['acesso'])
   }

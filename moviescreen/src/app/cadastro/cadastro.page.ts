@@ -38,25 +38,9 @@ export class CadastroPage implements OnInit {
       if (response['status'] == 'false') {
         this.retornarMensagem(response['reason']);
       }else {
-        this.userService.getUser(response['id_user']).subscribe(response => {
-          let userAcess = {
-            user_nick: response['nick_user'],
-            user_email: response['email_user'],
-            user_foto: response['ft_user']
-          }
-  
-          let navigationExtras: NavigationExtras = {
-            queryParams: {
-              special: JSON.stringify(userAcess)
-            }
-          }
+        this.retornarMensagem(response['reason']);
 
-          let message = "usuário cadastrado com sucesso!";
-
-          this.retornarMensagem(message);
-
-          this.navegacao.navigate(['home'], navigationExtras);
-        })
+        this.navegacao.navigate(['acesso']);
         
       }
     })

@@ -34,21 +34,26 @@ export class AcessoPage implements OnInit {
   LogIn() {
 
     if (this.Verificar()) { 
-      let userAcess = {
+      const userData = {
         email_user : this.email_user,
         pass_user : this.pass_user,
       }
-
-      let navigationExtras : NavigationExtras = {
-        queryParams: {
-          special: JSON.stringify(userAcess)
-        }
-      }
-
-      this.userService.login(userAcess).subscribe(response => {
+     
+      this.userService.login(userData).subscribe(response => {
+        
         if(response['status']=='false'){
           this.MostrarMensagem(response['reason']);
         }else{
+          let userAcess = {
+            user_nick: response['nick_user'],
+            user_foto: response['ft_user']
+          }
+    
+          let navigationExtras : NavigationExtras = {
+            queryParams: {
+              special: JSON.stringify(userAcess)
+            }
+          }
           this.route.navigate(['home'], navigationExtras);
         }
       })
